@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const routes = require('./routes');
 
@@ -16,6 +17,7 @@ mongoose.connect('mongodb+srv://semana:semana@cluster0-ecaw2.mongodb.net/semana0
 // req.params = Acessar route params (para edição e delete)
 // req.body = Acessar corpo da requisição (para criação e edição)
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
