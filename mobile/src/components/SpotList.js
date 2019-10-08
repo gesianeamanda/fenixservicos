@@ -30,7 +30,7 @@ function SpotList( { tech, navigation }) {
       <FlatList 
         style={styles.list}
         data={spots}
-        keyExtratctor={spot => spot._id}
+        keyExtractor={(item, index) => 'key'+index}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
