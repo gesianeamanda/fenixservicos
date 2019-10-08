@@ -20,6 +20,6 @@ module.exports = {
       req.io.to(ownerSocket).emit('booking_request', booking);
     }
 
-    return res.json(booking);
+    return res.json(booking);  
   }
 }
