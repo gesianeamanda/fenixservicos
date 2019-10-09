@@ -10,10 +10,10 @@ module.exports = {
 
     await booking.save();
 
-    const bookingUserSocket = req.connectedUsers[booking.spot.user];
+    const bookingUserSocket = req.connectedUsers[booking.user];
 
-    if(ownerSocket) {
-      req.io.to(ownerSocket).emit('booking_request', booking);
+    if(bookingUserSocket) {
+      req.io.to(bookingUserSocket).emit('booking_response', booking);
     }
 
     return res.json(booking)
