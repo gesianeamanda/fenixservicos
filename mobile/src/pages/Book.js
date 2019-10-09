@@ -8,7 +8,7 @@ export default function Book({ navigation }) {
   const id = navigation.getParam('id');
 
   async function handleSubmit() {
-    const user_id = await  AsyncStorage.getItem('user');
+    const user_id = await AsyncStorage.getItem('user');
 
     await api.post(`/spots/${id}/bookings`, {
       date

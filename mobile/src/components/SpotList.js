@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react
 
 import api from '../services/api';
 
-function SpotList( { tech, navigation }) {
+function SpotList({ tech, navigation }) {
   const [spots, setSpots] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function SpotList( { tech, navigation }) {
       <FlatList 
         style={styles.list}
         data={spots}
-        keyExtractor={(item, index) => 'key'+index}
+        keyExtractor={spot => spot._id}
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (

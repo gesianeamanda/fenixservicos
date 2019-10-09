@@ -44,7 +44,7 @@ export default function New({ history }) {
         <img src={camera} alt="Select img"/>
       </label>
 
-      <label htmlFor="company">Empresa *</label>
+      <label htmlFor="company">EMPRESA *</label>
       <input 
         id="company"
         placeholder="Sua empresa incrível"
@@ -60,7 +60,7 @@ export default function New({ history }) {
         onChange={event => setTechs(event.target.value)}
       />
       
-      <label htmlFor="price">VALOR DA DÍARIA * <span>(em branco para GRATUITO)</span></label>
+      <label htmlFor="price">VALOR DA DIÁRIA * <span>(em branco para GRATUITO)</span></label>
       <input 
         id="price"
         placeholder="Valor cobrado por dia"

@@ -17,17 +17,17 @@ mongoose.connect('mongodb+srv://semana:semana@cluster0-ecaw2.mongodb.net/semana0
   useUnifiedTopology: true,
 })
 
-const connecetdUsers = {};
+const connectedUsers = {};
 
 io.on('connection', socket => {
   const { user_id } = socket.handshake.query;
 
-  connecetdUsers[user_id] = socket.id;
+  connectedUsers[user_id] = socket.id;
 });
 
 app.use((req, res, next) => {
   req.io = io;
-  req.connecetdUsers = connecetdUsers;
+  req.connectedUsers = connectedUsers;
 
   return next();
 })

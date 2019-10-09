@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 
   logo: {
     height: 32,
-    resizeMode: 'contain',
+    resizeMode: "contain",
     alignSelf: 'center',
     marginTop: 10,
   },

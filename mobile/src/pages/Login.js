@@ -18,19 +18,20 @@ export default function Login({ navigation }) {
   }, []);
 
   async function handleSubmit() {
-    const response = await api.post('/sessions', { email
+    const response = await api.post('/sessions', { 
+      email
     })
 
     const { _id } = response.data;
 
-    await AsyncStorage.setItem(('user'), _id);
-    await AsyncStorage.setItem(('techs'), techs);
+    await AsyncStorage.setItem('user', _id);
+    await AsyncStorage.setItem('techs', techs);
 
     navigation.navigate('List');
   }
 
   return (
-    <KeyboardAvoidingView enabled={Platform.OS == 'ios' || 'android' } behavior="padding" style={styles.container}>
+    <KeyboardAvoidingView enabled={Platform.OS === 'ios' || 'android' } behavior="padding" style={styles.container}>
       <Image source={logo} />
 
       <View style={styles.form}>
